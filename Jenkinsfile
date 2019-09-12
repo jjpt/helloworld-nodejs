@@ -1,8 +1,7 @@
 pipeline {
-  agent none
+  agent ant
   stages {
     stage('Test') {
-      agent { label 'nodejs-app' }
       steps {
         sh 'java -version'
         container('nodejs') {
