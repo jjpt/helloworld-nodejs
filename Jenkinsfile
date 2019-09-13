@@ -1,13 +1,10 @@
 pipeline {
-  agent ant
+  agent any
   stages {
-    stage('Test') {
+    stage('Say Hello') {
       steps {
+        echo 'Hello World!'   
         sh 'java -version'
-        container('nodejs') {
-          echo 'Hello World!'   
-          sh 'node --version'
-        }
       }
     }
   }
